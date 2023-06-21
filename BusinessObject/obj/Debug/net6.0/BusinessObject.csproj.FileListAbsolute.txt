@@ -12,3 +12,17 @@ C:\Users\beast\OneDrive\Desktop\TestProject\BusinessObject\obj\Debug\net6.0\refi
 C:\Users\beast\OneDrive\Desktop\TestProject\BusinessObject\obj\Debug\net6.0\BusinessObject.pdb
 C:\Users\beast\OneDrive\Desktop\TestProject\BusinessObject\obj\Debug\net6.0\BusinessObject.genruntimeconfig.cache
 C:\Users\beast\OneDrive\Desktop\TestProject\BusinessObject\obj\Debug\net6.0\ref\BusinessObject.dll
+C:\Users\beast\OneDrive\Desktop\Gittt\BusinessObject\bin\Debug\net6.0\BusinessObject.deps.json
+C:\Users\beast\OneDrive\Desktop\Gittt\BusinessObject\bin\Debug\net6.0\BusinessObject.runtimeconfig.json
+C:\Users\beast\OneDrive\Desktop\Gittt\BusinessObject\bin\Debug\net6.0\BusinessObject.dll
+C:\Users\beast\OneDrive\Desktop\Gittt\BusinessObject\bin\Debug\net6.0\BusinessObject.pdb
+C:\Users\beast\OneDrive\Desktop\Gittt\BusinessObject\obj\Debug\net6.0\BusinessObject.csproj.AssemblyReference.cache
+C:\Users\beast\OneDrive\Desktop\Gittt\BusinessObject\obj\Debug\net6.0\BusinessObject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beast\OneDrive\Desktop\Gittt\BusinessObject\obj\Debug\net6.0\BusinessObject.AssemblyInfoInputs.cache
+C:\Users\beast\OneDrive\Desktop\Gittt\BusinessObject\obj\Debug\net6.0\BusinessObject.AssemblyInfo.cs
+C:\Users\beast\OneDrive\Desktop\Gittt\BusinessObject\obj\Debug\net6.0\BusinessObject.csproj.CoreCompileInputs.cache
+C:\Users\beast\OneDrive\Desktop\Gittt\BusinessObject\obj\Debug\net6.0\BusinessObject.dll
+C:\Users\beast\OneDrive\Desktop\Gittt\BusinessObject\obj\Debug\net6.0\refint\BusinessObject.dll
+C:\Users\beast\OneDrive\Desktop\Gittt\BusinessObject\obj\Debug\net6.0\BusinessObject.pdb
+C:\Users\beast\OneDrive\Desktop\Gittt\BusinessObject\obj\Debug\net6.0\BusinessObject.genruntimeconfig.cache
+C:\Users\beast\OneDrive\Desktop\Gittt\BusinessObject\obj\Debug\net6.0\ref\BusinessObject.dll

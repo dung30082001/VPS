@@ -1,4 +1,5 @@
 
+using BusinessObject.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddSession();
+builder.Services.AddDbContext<VPSContext>(opt =>
+{
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("VPS"));
+});
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

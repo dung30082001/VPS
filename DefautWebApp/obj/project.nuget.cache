@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eQwne9UCqK/mB67gcjtjn8RF9IGqkc6g1wsmhMQ/4cdPkI2DWz9VYgFpFm5YBSVoOyitgfpLoIGz8ctgfkgWhw==",
+  "dgSpecHash": "qLc/TcpS3Zd7KwTxX2B+v2gH8gpNo+FeJIPDdrYuX2dfMD2FZGcxFQUDyJsjElk/VLGAd2U1KqvejfE6LJ+R9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\DefautWebApp\\DefautWebApp.csproj",
+  "projectFilePath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DefautWebApp\\DefautWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\beast\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\beast\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

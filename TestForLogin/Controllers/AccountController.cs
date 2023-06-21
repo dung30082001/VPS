@@ -11,17 +11,30 @@ namespace TestForLogin.Controllers
     public class AccountController : ControllerBase
     {
         private readonly VPSContext _context;
+
+        public int finalAccount;
+
+        public List<Account> listA;
         public AccountController(VPSContext context)
         {
             _context = context;
         }
         private IAccountRepository repository = new AccountRepository();
         [HttpGet]
+        [Route("list")]
         public async Task<ActionResult<IEnumerable<Account>>> GetAccount()
         {
             return repository.GetAccount();
         }
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Route("total")]
+        public async Task<int> GetTotalAccount()
+        {
+            listA = _context.Accounts.ToList();
+            finalAccount = listA.Count;
+            return finalAccount;
+        }
+    [HttpGet("{id}")]
         public async Task<ActionResult<Account>> GetAccountById(int id)
         {
             var account = await _context.Accounts.FindAsync(id);

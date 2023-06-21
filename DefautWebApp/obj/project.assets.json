@@ -940,6 +940,20 @@
             "rid": "win"
           }
         }
+      },
+      "BusinessObject/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.18",
+          "Microsoft.Extensions.Configuration.Json": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BusinessObject.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessObject.dll": {}
+        }
       }
     }
   },
@@ -2412,10 +2426,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "BusinessObject/1.0.0": {
+      "type": "project",
+      "path": "../BusinessObject/BusinessObject.csproj",
+      "msbuildProject": "../BusinessObject/BusinessObject.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BusinessObject >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.18",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.18",
       "Microsoft.Extensions.Configuration.Json >= 7.0.0"
@@ -2427,11 +2447,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\DefautWebApp\\DefautWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DefautWebApp\\DefautWebApp.csproj",
       "projectName": "DefautWebApp",
-      "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\DefautWebApp\\DefautWebApp.csproj",
+      "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DefautWebApp\\DefautWebApp.csproj",
       "packagesPath": "C:\\Users\\beast\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\DefautWebApp\\obj\\",
+      "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DefautWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\beast\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2447,7 +2467,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

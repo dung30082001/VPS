@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\BusinessObject\\BusinessObject.csproj": {
+    "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\BusinessObject\\BusinessObject.csproj",
+        "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\beast\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\BusinessObject\\obj\\",
+        "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\beast\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -75,14 +75,14 @@
         }
       }
     },
-    "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\beast\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\beast\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -99,8 +99,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\BusinessObject\\BusinessObject.csproj"
+              "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj"
               }
             }
           }

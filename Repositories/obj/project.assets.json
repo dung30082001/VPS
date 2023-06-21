@@ -2319,11 +2319,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\Repositories\\Repositories.csproj",
+      "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\Repositories\\Repositories.csproj",
       "projectName": "Repositories",
-      "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\Repositories\\Repositories.csproj",
+      "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\Repositories\\Repositories.csproj",
       "packagesPath": "C:\\Users\\beast\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\Repositories\\obj\\",
+      "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\beast\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2340,8 +2340,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\DataAccess.csproj"
             }
           }
         }

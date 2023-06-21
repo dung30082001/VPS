@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "drncuk84DzZW1b1CuYkg3QtZJPYcFqsc10lZC1PxKrj6JJwrlN/iMaGR+wSwFirBW7dfhgUapVw8MArqZckpHw==",
+  "dgSpecHash": "ixPlxa/EclzbAYPHilqIiY5mDtaqvI/YOUoyUOmUVEMIPi/rDY9YneUsZMFed7IEuc5w9K+io3ieYbmewpZs9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\beast\\OneDrive\\Desktop\\TestProject\\TestForLogin\\TestForLogin.csproj",
+  "projectFilePath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\TestForLogin\\TestForLogin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\beast\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\beast\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
