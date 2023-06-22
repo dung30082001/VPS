@@ -10,42 +10,23 @@ namespace TestForLogin.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        private readonly VPSContext _context;
-
-        public int totalOrder;
-
-        public List<Order> listO;
-
-        public OrderController(VPSContext context)
-        {
-            _context = context;
-        }
+        private IOrderRepository repository = new OrderRepository();
         [HttpGet]
         [Route("list")]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrder()
         {
-            return _context.Orders.ToList();
+            return repository.GetOrder();
         }
         [HttpGet]
         [Route("total")]
         public async Task<int> GetTotalOrder()
         {
-            listO = _context.Orders.ToList();
-
-            totalOrder = listO.Count;
-            return totalOrder;
+            return repository.GetTotalOrder();
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<Order>> GetOrderById(int id)
         {
-            var order = await _context.Orders.FindAsync(id);
-
-            if (order == null)
-            {
-                return NotFound();
-            }
-
-            return order;
+            return repository.GetOrderById(id);
         }
     }
 }

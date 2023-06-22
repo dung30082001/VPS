@@ -1,6 +1,7 @@
 ﻿using BusinessObject.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace DefautWebApp.Pages
 {
@@ -18,6 +19,7 @@ namespace DefautWebApp.Pages
         public int finalblog;
 
         public double finalorderin6;
+        public List<Product> listP;
         public List<OrderDetail> listOD;
         public List<Order> listO6;
         public List<Account> listAcc;
@@ -30,6 +32,7 @@ namespace DefautWebApp.Pages
 
         public void OnGet()
         {
+            listP = context.Products.Include(x=> x.Category).ToList();
             listOD = context.OrderDetails.ToList();
             foreach(var item in listOD)
             {

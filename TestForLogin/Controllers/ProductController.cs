@@ -1,6 +1,7 @@
 ﻿using BusinessObject.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Repositories;
 
 namespace TestForLogin.Controllers
 {
@@ -8,27 +9,16 @@ namespace TestForLogin.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly VPSContext _context;
-        public ProductController(VPSContext context)
-        {
-            _context = context;
-        }
+        private IProductRepository repository = new ProductRepository();
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProduct()
         {
-            return _context.Products.ToList();
+            return repository.GetProduct();
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProductById(int id)
         {
-            var product = await _context.Products.FindAsync(id);
-
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return product;
+            return repository.GetProductById(id);
         }
     }
 }

@@ -10,5 +10,15 @@ namespace Repositories
     public interface IAccountRepository
     {
         List<Account> GetAccount();
+
+        Account GetAccountById(int id);
+
+        int GetTotalAccount();
+
+        void UpdateAccount(int id, Account account);
+
+        void AddAccount(Account account);
+
+        void DeleteAccount(int id);
     }
 }

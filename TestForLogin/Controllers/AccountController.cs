@@ -10,15 +10,7 @@ namespace TestForLogin.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-        private readonly VPSContext _context;
 
-        public int finalAccount;
-
-        public List<Account> listA;
-        public AccountController(VPSContext context)
-        {
-            _context = context;
-        }
         private IAccountRepository repository = new AccountRepository();
         [HttpGet]
         [Route("list")]
@@ -30,75 +22,36 @@ namespace TestForLogin.Controllers
         [Route("total")]
         public async Task<int> GetTotalAccount()
         {
-            listA = _context.Accounts.ToList();
-            finalAccount = listA.Count;
-            return finalAccount;
+            return repository.GetTotalAccount();
         }
     [HttpGet("{id}")]
         public async Task<ActionResult<Account>> GetAccountById(int id)
         {
-            var account = await _context.Accounts.FindAsync(id);
-
-            if (account == null)
-            {
-                return NotFound();
-            }
-
-            return account;
+            return repository.GetAccountById(id);
         }
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAccount(int id, Account account)
         {
-            if (id != account.AccountId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(account).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!AccountExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
+            repository.UpdateAccount(id, account);
             return NoContent();
         }
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAccount(int id)
         {
-            var account = await _context.Accounts.FindAsync(id);
+            var account =  repository.GetAccountById(id);
             if (account == null)
             {
                 return NotFound();
             }
 
-            _context.Accounts.Remove(account);
-            await _context.SaveChangesAsync();
-
+            repository.DeleteAccount(id);
             return NoContent();
         }
         [HttpPost]
-        public async Task<ActionResult<Account>> PostAccount(Customer customer)
+        public async Task<ActionResult<Account>> PostAccount(Account acc)
         {
-            _context.Customers.Add(customer);
-            await _context.SaveChangesAsync();
-            await _context.SaveChangesAsync();
-            return CreatedAtAction("GetAccountById", new { id = customer.CustomerId }, customer);
-        }
-        private bool AccountExists(int id)
-        {
-            return _context.Accounts.Any(e => e.AccountId == id);
+            repository.AddAccount(acc);
+            return NoContent();
         }
     }
 }

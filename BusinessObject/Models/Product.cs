@@ -11,7 +11,7 @@ namespace BusinessObject.Models
         }
 
         public int ProductId { get; set; }
-        public string? PriductName { get; set; }
+        public string? ProductName { get; set; }
         public int? CategoryId { get; set; }
         public int? UnitInStock { get; set; }
         public double? UnitPrice { get; set; }
@@ -19,8 +19,10 @@ namespace BusinessObject.Models
         public int? StatusId { get; set; }
         public string? Brand { get; set; }
         public string? Description { get; set; }
+        public DateTime? DiscountDate { get; set; }
 
         public virtual Category? Category { get; set; }
+        public virtual Status? Status { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

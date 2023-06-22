@@ -58,6 +58,8 @@ namespace BusinessObject.Models
             {
                 entity.ToTable("Account");
 
+                entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+
                 entity.Property(e => e.Email).HasMaxLength(200);
 
                 entity.Property(e => e.Password).HasMaxLength(50);
@@ -376,12 +378,19 @@ namespace BusinessObject.Models
 
                 entity.Property(e => e.Brand).HasMaxLength(250);
 
-                entity.Property(e => e.PriductName).HasMaxLength(250);
+                entity.Property(e => e.DiscountDate).HasColumnType("datetime");
+
+                entity.Property(e => e.ProductName).HasMaxLength(250);
 
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.CategoryId)
                     .HasConstraintName("FK_Product_Category");
+
+                entity.HasOne(d => d.Status)
+                    .WithMany(p => p.Products)
+                    .HasForeignKey(d => d.StatusId)
+                    .HasConstraintName("FK_Product_Status");
             });
 
             modelBuilder.Entity<Qrcode>(entity =>

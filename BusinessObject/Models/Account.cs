@@ -22,6 +22,7 @@ namespace BusinessObject.Models
         public int? AdminId { get; set; }
         public int? SaleId { get; set; }
         public int? ShipperId { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         public virtual Admin? Admin { get; set; }
         public virtual Blogger? Blogger { get; set; }

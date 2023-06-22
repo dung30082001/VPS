@@ -11,41 +11,23 @@ namespace TestForLogin.Controllers
     [ApiController]
     public class OrderDetailController : ControllerBase
     {
-        private readonly VPSContext _context;
-        public List<OrderDetail> listOD;
-        public double finalSum;
-        public OrderDetailController(VPSContext context)
-        {
-            _context = context;
-        }
+        private IOrderDetailRepository repository = new OrderDetailRepository();
         [HttpGet]
         [Route("list")]
-        public async Task<ActionResult<IEnumerable<OrderDetail>>> GetCustomer()
+        public async Task<ActionResult<IEnumerable<OrderDetail>>> GetOrderDetail()
         {
-            return _context.OrderDetails.ToList();
+            return repository.GetOrderDetail();
         }
         [HttpGet]
         [Route("totalprice")]
         public async Task<double> GetTotalOrder()
         {
-            listOD = _context.OrderDetails.ToList();
-            foreach (var item in listOD)
-            {
-                finalSum += item.UnitPrice.Value;
-            }
-            return finalSum;
+            return repository.GetTotalOrderDetail();
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<OrderDetail>> GetOrderById(int id)
         {
-            var od = await _context.OrderDetails.FindAsync(id);
-
-            if (od == null)
-            {
-                return NotFound();
-            }
-
-            return od;
+            return repository.GetOrderDetailById(id);
         }
     }
 }

@@ -1,0 +1,43 @@
+﻿using BusinessObject.Models;
+using DataAccess;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Repositories
+{
+    public class OrderRepository : IOrderRepository
+    {
+        public void AddOrder(Order od)
+        {
+             OrderDAO.AddOrder(od);
+        }
+
+        public void DeleteOrder(int id)
+        {
+           OrderDAO.DeleteOd(id);
+        }
+
+        public List<Order> GetOrder()
+        {
+            return OrderDAO.GetOrder();
+        }
+
+        public Order GetOrderById(int id)
+        {
+            return OrderDAO.GetOrderById(id);
+        }
+
+        public int GetTotalOrder()
+        {
+            return OrderDAO.GetTotalOrder();
+        }
+
+        public void UpdateOrder(int id, Order od)
+        {
+            OrderDAO.UpdateOd(id, od);
+        }
+    }
+}
