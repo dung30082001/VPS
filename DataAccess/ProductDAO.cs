@@ -12,12 +12,12 @@ namespace DataAccess
     {
         public static List<Product> GetProduct()
         {
-            var product = new List<Product>();
+            List<Product> product;
             try
             {
                 using (var context = new VPSContext())
                 {
-                    product = context.Products.Include(x=>x.Category).Include(y=>y.Status).ToList();
+                    product = context.Products.Include(x=>x.Status).ToList();
                 }
             }
             catch (Exception e)

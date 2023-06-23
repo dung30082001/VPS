@@ -11,6 +11,8 @@ namespace Repositories
     {
         List<OrderDetail> GetOrderDetail();
 
+        List<OrderDetail> GetOrderDetailByOrderId(int id);
+
         OrderDetail GetOrderDetailById(int id);
 
         double GetTotalOrderDetail();
@@ -20,5 +22,7 @@ namespace Repositories
         void AddOrderDetail(OrderDetail od);
 
         void DeleteOrderDetail(int id);
+
+
     }
 }

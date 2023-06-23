@@ -41,6 +41,22 @@ namespace DataAccess
             }
             return od;
         }
+        public static List<OrderDetail> GetOrderDetailByOrderId(int id)
+        {
+            var listOrderD = new List<OrderDetail>();
+            try
+            {
+                using (var context = new VPSContext())
+                {
+                    listOrderD = context.OrderDetails.Where(x=>x.OrderId==id).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return listOrderD;
+        }
         public static double GetTotalOrderDetail()
         {
             double finalOd = 0;

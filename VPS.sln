@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForLogin", "TestForLogin\TestForLogin.csproj", "{7AFDAE8C-BDDF-4F90-BA69-571A3A5534F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIConnect", "TestForLogin\APIConnect.csproj", "{7AFDAE8C-BDDF-4F90-BA69-571A3A5534F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefautWebApp", "DefautWebApp\DefautWebApp.csproj", "{7BE8413F-6153-41AC-8379-2E409C71EC67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefautWebApp", "DefautWebApp\DefautWebApp.csproj", "{7BE8413F-6153-41AC-8379-2E409C71EC67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObject", "BusinessObject\BusinessObject.csproj", "{8299CCA5-7D4F-4D27-BF00-CC2AC5DEB191}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessObject", "BusinessObject\BusinessObject.csproj", "{8299CCA5-7D4F-4D27-BF00-CC2AC5DEB191}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{20B40B85-55EE-40AA-A45F-9A2B7F1A8F96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{20B40B85-55EE-40AA-A45F-9A2B7F1A8F96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{E1FE0FD1-BA2E-4D15-A9FF-45033CF4080D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{E1FE0FD1-BA2E-4D15-A9FF-45033CF4080D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

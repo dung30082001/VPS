@@ -30,6 +30,10 @@ namespace Repositories
             return OrderDetailDAO.GetOrderDetailById(id);
         }
 
+        public List<OrderDetail> GetOrderDetailByOrderId(int id)
+        {
+            return OrderDetailDAO.GetOrderDetailByOrderId(id);
+        }
 
         public double GetTotalOrderDetail()
         {

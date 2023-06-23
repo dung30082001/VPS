@@ -19,6 +19,12 @@ namespace TestForLogin.Controllers
             return repository.GetOrderDetail();
         }
         [HttpGet]
+        [Route("listbyod")]
+        public async Task<ActionResult<IEnumerable<OrderDetail>>> GetOrderDetailByOrderId(int id)
+        {
+            return repository.GetOrderDetailByOrderId(id);
+        }
+        [HttpGet]
         [Route("totalprice")]
         public async Task<double> GetTotalOrder()
         {

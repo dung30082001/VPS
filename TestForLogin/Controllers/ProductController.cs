@@ -1,7 +1,10 @@
 ﻿using BusinessObject.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Repositories;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace TestForLogin.Controllers
 {
@@ -13,7 +16,8 @@ namespace TestForLogin.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProduct()
         {
-            return repository.GetProduct();
+            VPSContext context = new VPSContext();
+            return context.Products.Include(x=>x.Category).Include(x=>x.Status).ToList();
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProductById(int id)

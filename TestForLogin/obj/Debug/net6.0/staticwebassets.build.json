@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "fKdFCm5xC2JM5WYn9dC95IGDYeSyn53gu+LiRzG0oZI=",
-  "Source": "TestForLogin",
-  "BasePath": "_content/TestForLogin",
+  "Hash": "QYmHCDqLEjQ3G+uz2yo6xF23RyBAPoGwXnshfsA1nNU=",
+  "Source": "APIConnect",
+  "BasePath": "_content/APIConnect",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
