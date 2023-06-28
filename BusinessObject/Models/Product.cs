@@ -20,9 +20,13 @@ namespace BusinessObject.Models
         public string? Brand { get; set; }
         public string? Description { get; set; }
         public DateTime? DiscountDate { get; set; }
+        public string? Type { get; set; }
+        public string? Moneytype { get; set; }
+        public int? Status { get; set; }
+        public string? Maintaince { get; set; }
 
         public virtual Category? Category { get; set; }
-        public virtual Status? Status { get; set; }
+        public virtual Status? StatusNavigation { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

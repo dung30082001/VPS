@@ -20,6 +20,7 @@ namespace BusinessObject.Models
         public virtual DbSet<Admin> Admins { get; set; } = null!;
         public virtual DbSet<Blog> Blogs { get; set; } = null!;
         public virtual DbSet<Blogger> Bloggers { get; set; } = null!;
+        public virtual DbSet<Buy> Buys { get; set; } = null!;
         public virtual DbSet<Category> Categories { get; set; } = null!;
         public virtual DbSet<Comment> Comments { get; set; } = null!;
         public virtual DbSet<Consultant> Consultants { get; set; } = null!;
@@ -27,11 +28,13 @@ namespace BusinessObject.Models
         public virtual DbSet<Conversation> Conversations { get; set; } = null!;
         public virtual DbSet<Customer> Customers { get; set; } = null!;
         public virtual DbSet<FeedBack> FeedBacks { get; set; } = null!;
+        public virtual DbSet<Image> Images { get; set; } = null!;
         public virtual DbSet<Manager> Managers { get; set; } = null!;
         public virtual DbSet<Message> Messages { get; set; } = null!;
         public virtual DbSet<Order> Orders { get; set; } = null!;
         public virtual DbSet<OrderDetail> OrderDetails { get; set; } = null!;
         public virtual DbSet<Product> Products { get; set; } = null!;
+        public virtual DbSet<ProductDetail> ProductDetails { get; set; } = null!;
         public virtual DbSet<Qrcode> Qrcodes { get; set; } = null!;
         public virtual DbSet<Role> Roles { get; set; } = null!;
         public virtual DbSet<Sale> Sales { get; set; } = null!;
@@ -177,6 +180,23 @@ namespace BusinessObject.Models
                 entity.Property(e => e.Phone).HasMaxLength(50);
             });
 
+            modelBuilder.Entity<Buy>(entity =>
+            {
+                entity.ToTable("Buy");
+
+                entity.HasOne(d => d.Customer)
+                    .WithMany(p => p.Buys)
+                    .HasForeignKey(d => d.CustomerId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Buy_Customers");
+
+                entity.HasOne(d => d.Order)
+                    .WithMany(p => p.Buys)
+                    .HasForeignKey(d => d.OrderId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Buy_Order");
+            });
+
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.ToTable("Category");
@@ -292,6 +312,13 @@ namespace BusinessObject.Models
                     .HasConstraintName("FK_FeedBack_Shipper");
             });
 
+            modelBuilder.Entity<Image>(entity =>
+            {
+                entity.ToTable("Image");
+
+                entity.Property(e => e.ImageName).HasMaxLength(100);
+            });
+
             modelBuilder.Entity<Manager>(entity =>
             {
                 entity.ToTable("Manager");
@@ -380,17 +407,32 @@ namespace BusinessObject.Models
 
                 entity.Property(e => e.DiscountDate).HasColumnType("datetime");
 
+                entity.Property(e => e.Maintaince)
+                    .HasMaxLength(100)
+                    .IsFixedLength();
+
+                entity.Property(e => e.Moneytype).HasMaxLength(50);
+
                 entity.Property(e => e.ProductName).HasMaxLength(250);
+
+                entity.Property(e => e.Type).HasMaxLength(100);
 
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.CategoryId)
                     .HasConstraintName("FK_Product_Category");
 
-                entity.HasOne(d => d.Status)
+                entity.HasOne(d => d.StatusNavigation)
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.StatusId)
                     .HasConstraintName("FK_Product_Status");
+            });
+
+            modelBuilder.Entity<ProductDetail>(entity =>
+            {
+                entity.HasKey(e => e.DetailId);
+
+                entity.ToTable("ProductDetail");
             });
 
             modelBuilder.Entity<Qrcode>(entity =>

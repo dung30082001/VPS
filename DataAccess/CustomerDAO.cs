@@ -26,6 +26,22 @@ namespace DataAccess
             }
             return listCustomers;
         }
+        public static Customer GetCustomerByOrderId(int id)
+        {
+            var Customers = new Customer();
+            try
+            {
+                using (var context = new VPSContext())
+                {
+                    Customers = context.Customers.FirstOrDefault(x => x.OrderId == id);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return Customers;
+        }
         public static Customer GetCustomerById(int id)
         {
             var cus = new Customer();

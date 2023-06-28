@@ -22,7 +22,8 @@ namespace TestForLogin.Controllers
         [Route("listbyod")]
         public async Task<ActionResult<IEnumerable<OrderDetail>>> GetOrderDetailByOrderId(int id)
         {
-            return repository.GetOrderDetailByOrderId(id);
+
+           return repository.GetOrderDetailByOrderId(id);
         }
         [HttpGet]
         [Route("totalprice")]

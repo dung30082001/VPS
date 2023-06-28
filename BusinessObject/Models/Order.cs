@@ -7,6 +7,7 @@ namespace BusinessObject.Models
     {
         public Order()
         {
+            Buys = new HashSet<Buy>();
             Customers = new HashSet<Customer>();
             FeedBacks = new HashSet<FeedBack>();
             OrderDetails = new HashSet<OrderDetail>();
@@ -23,6 +24,7 @@ namespace BusinessObject.Models
 
         public virtual Sale? Sale { get; set; }
         public virtual Shipper? Ship { get; set; }
+        public virtual ICollection<Buy> Buys { get; set; }
         public virtual ICollection<Customer> Customers { get; set; }
         public virtual ICollection<FeedBack> FeedBacks { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

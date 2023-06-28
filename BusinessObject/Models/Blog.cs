@@ -13,6 +13,7 @@ namespace BusinessObject.Models
         public int? ImageId { get; set; }
         public int? CommentId { get; set; }
         public int? StatusId { get; set; }
+        public int? CategoryId { get; set; }
 
         public virtual Blogger? Blogger { get; set; }
         public virtual Comment? BloggerNavigation { get; set; }
