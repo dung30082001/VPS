@@ -422,7 +422,7 @@ namespace BusinessObject.Models
                     .HasForeignKey(d => d.CategoryId)
                     .HasConstraintName("FK_Product_Category");
 
-                entity.HasOne(d => d.StatusNavigation)
+                entity.HasOne(d => d.Status)
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.StatusId)
                     .HasConstraintName("FK_Product_Status");

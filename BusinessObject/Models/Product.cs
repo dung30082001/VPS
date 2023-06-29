@@ -22,11 +22,11 @@ namespace BusinessObject.Models
         public DateTime? DiscountDate { get; set; }
         public string? Type { get; set; }
         public string? Moneytype { get; set; }
-        public int? Status { get; set; }
+        public int? Quality { get; set; }
         public string? Maintaince { get; set; }
 
         public virtual Category? Category { get; set; }
-        public virtual Status? StatusNavigation { get; set; }
+        public virtual Status? Status { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace DataAccess
             {
                 using (var context = new VPSContext())
                 {
-                    product = context.Products.Include(x=>x.Status).ToList();
+                    product = context.Products.Include(x=>x.Category).Include(y=>y.Status).ToList();
                 }
             }
             catch (Exception e)
@@ -33,7 +33,7 @@ namespace DataAccess
             {
                 using (var context = new VPSContext())
                 {
-                    product = context.Products.Include(x => x.Category).Include(y => y.Status).First(x=>x.ProductId==id);
+                    product = context.Products.Include(x => x.Category).Include(y=>y.Status).First(x=>x.ProductId==id);
                 }
             }
             catch (Exception e)
