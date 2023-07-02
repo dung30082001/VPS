@@ -8,5 +8,6 @@ namespace BusinessObject.Models
         public int DetailId { get; set; }
         public int? ProductId { get; set; }
         public int? ImageId { get; set; }
+        public string? Description { get; set; }
     }
 }

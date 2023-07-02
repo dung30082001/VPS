@@ -30,10 +30,10 @@ namespace Repositories
            return CustomerDAO.GetCustomerById(id);
         }
 
-        public Customer GetCustomerByOrderId(int id)
-        {
-            return CustomerDAO.GetCustomerByOrderId(id);
-        }
+        //public Customer GetCustomerByOrderId(int id)
+        //{
+        //   // return CustomerDAO.GetCustomerByOrderId(id);
+        //}
 
         public int GetTotalCustomer()
         {

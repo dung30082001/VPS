@@ -20,7 +20,6 @@ namespace BusinessObject.Models
         public virtual DbSet<Admin> Admins { get; set; } = null!;
         public virtual DbSet<Blog> Blogs { get; set; } = null!;
         public virtual DbSet<Blogger> Bloggers { get; set; } = null!;
-        public virtual DbSet<Buy> Buys { get; set; } = null!;
         public virtual DbSet<Category> Categories { get; set; } = null!;
         public virtual DbSet<Comment> Comments { get; set; } = null!;
         public virtual DbSet<Consultant> Consultants { get; set; } = null!;
@@ -36,6 +35,7 @@ namespace BusinessObject.Models
         public virtual DbSet<Product> Products { get; set; } = null!;
         public virtual DbSet<ProductDetail> ProductDetails { get; set; } = null!;
         public virtual DbSet<Qrcode> Qrcodes { get; set; } = null!;
+        public virtual DbSet<Rent> Rents { get; set; } = null!;
         public virtual DbSet<Role> Roles { get; set; } = null!;
         public virtual DbSet<Sale> Sales { get; set; } = null!;
         public virtual DbSet<Shipper> Shippers { get; set; } = null!;
@@ -154,11 +154,6 @@ namespace BusinessObject.Models
                     .HasForeignKey(d => d.BloggerId)
                     .HasConstraintName("FK_Blog_Blogger");
 
-                entity.HasOne(d => d.BloggerNavigation)
-                    .WithMany(p => p.Blogs)
-                    .HasForeignKey(d => d.BloggerId)
-                    .HasConstraintName("FK_Blog_Comment");
-
                 entity.HasOne(d => d.Status)
                     .WithMany(p => p.Blogs)
                     .HasForeignKey(d => d.StatusId)
@@ -178,23 +173,6 @@ namespace BusinessObject.Models
                 entity.Property(e => e.FullName).HasMaxLength(200);
 
                 entity.Property(e => e.Phone).HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<Buy>(entity =>
-            {
-                entity.ToTable("Buy");
-
-                entity.HasOne(d => d.Customer)
-                    .WithMany(p => p.Buys)
-                    .HasForeignKey(d => d.CustomerId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Buy_Customers");
-
-                entity.HasOne(d => d.Order)
-                    .WithMany(p => p.Buys)
-                    .HasForeignKey(d => d.OrderId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Buy_Order");
             });
 
             modelBuilder.Entity<Category>(entity =>
@@ -275,11 +253,6 @@ namespace BusinessObject.Models
                 entity.Property(e => e.FullName).HasMaxLength(200);
 
                 entity.Property(e => e.Phone).HasMaxLength(50);
-
-                entity.HasOne(d => d.Order)
-                    .WithMany(p => p.Customers)
-                    .HasForeignKey(d => d.OrderId)
-                    .HasConstraintName("FK_Customers_Order");
 
                 entity.HasOne(d => d.Status)
                     .WithMany(p => p.Customers)
@@ -433,6 +406,10 @@ namespace BusinessObject.Models
                 entity.HasKey(e => e.DetailId);
 
                 entity.ToTable("ProductDetail");
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(100)
+                    .IsFixedLength();
             });
 
             modelBuilder.Entity<Qrcode>(entity =>
@@ -449,6 +426,26 @@ namespace BusinessObject.Models
                 entity.Property(e => e.DayCreate).HasColumnType("datetime");
 
                 entity.Property(e => e.Description).HasMaxLength(250);
+            });
+
+            modelBuilder.Entity<Rent>(entity =>
+            {
+                entity.HasKey(e => e.BuyId)
+                    .HasName("PK_Buy");
+
+                entity.ToTable("Rent");
+
+                entity.HasOne(d => d.Customer)
+                    .WithMany(p => p.Rents)
+                    .HasForeignKey(d => d.CustomerId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Buy_Customers");
+
+                entity.HasOne(d => d.Order)
+                    .WithMany(p => p.Rents)
+                    .HasForeignKey(d => d.OrderId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Buy_Order");
             });
 
             modelBuilder.Entity<Role>(entity =>

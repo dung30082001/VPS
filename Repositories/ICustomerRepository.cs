@@ -13,7 +13,7 @@ namespace Repositories
 
         Customer GetCustomerById(int id);
 
-        Customer GetCustomerByOrderId(int id);
+        //Customer GetCustomerByOrderId(int id);
         int GetTotalCustomer();
 
         void UpdateCustomer(int id, Customer cus);

@@ -26,22 +26,6 @@ namespace DataAccess
             }
             return listCustomers;
         }
-        public static Customer GetCustomerByOrderId(int id)
-        {
-            var Customers = new Customer();
-            try
-            {
-                using (var context = new VPSContext())
-                {
-                    Customers = context.Customers.FirstOrDefault(x => x.OrderId == id);
-                }
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-            return Customers;
-        }
         public static Customer GetCustomerById(int id)
         {
             var cus = new Customer();
@@ -89,8 +73,6 @@ namespace DataAccess
                     current.Address = cus.Address;
                     current.Balance = cus.Balance;
                     current.Dob = cus.Dob;
-                    current.ChatId = cus.ChatId;
-                    current.OrderId = cus.OrderId;
                     current.StatusId = cus.StatusId;
                     current.Avatar = cus.Avatar;
                     current.IsValid = cus.IsValid;

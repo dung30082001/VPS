@@ -72,7 +72,6 @@ namespace DataAccess
                     current.Description = blog.Description;
                     current.PublishDate = blog.PublishDate;
                     current.ImageId = blog.ImageId;
-                    current.CommentId = blog.CommentId;
                     current.StatusId = blog.StatusId;
                     context.Blogs.Update(current);
                     context.SaveChanges();
