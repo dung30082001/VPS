@@ -28,5 +28,29 @@ namespace TestForLogin.Controllers
         {
             return repository.GetBlogById(id);
         }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutBlog(int id, Blog blog)
+        {
+            repository.UpdateBlog(id, blog);
+            return NoContent();
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteBlog(int id)
+        {
+            var account = repository.GetBlogById(id);
+            if (account == null)
+            {
+                return NotFound();
+            }
+
+            repository.DeleteBlog(id);
+            return NoContent();
+        }
+        [HttpPost]
+        public async Task<ActionResult<Blog>> PostBlog(Blog blog)
+        {
+            repository.AddBlog(blog);
+            return NoContent();
+        }
     }
 }

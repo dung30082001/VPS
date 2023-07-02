@@ -24,5 +24,29 @@ namespace TestForLogin.Controllers
         {
             return repository.GetProductById(id);
         }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutProduct(int id, Product product)
+        {
+            repository.UpdateProduct(id, product);
+            return NoContent();
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteOrderDetail(int id)
+        {
+            var account = repository.GetProductById(id);
+            if (account == null)
+            {
+                return NotFound();
+            }
+
+            repository.DeleteProduct(id);
+            return NoContent();
+        }
+        [HttpPost]
+        public async Task<ActionResult<Product>> PostProductt(Product product)
+        {
+            repository.AddProduct(product);
+            return NoContent();
+        }
     }
 }
