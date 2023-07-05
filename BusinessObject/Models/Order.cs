@@ -21,6 +21,7 @@ namespace BusinessObject.Models
         public double Price { get; set; }
         public int Status { get; set; }
 
+        public virtual Customer? Customer { get; set; }
         public virtual Sale? Sale { get; set; }
         public virtual Shipper? Ship { get; set; }
         public virtual ICollection<FeedBack> FeedBacks { get; set; }

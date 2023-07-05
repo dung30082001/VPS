@@ -49,7 +49,8 @@ namespace DataAccess
                 using (var context = new VPSContext())
                 {
                     current = context.Statuses.Find(id);
-                    current.StatusName = status.StatusName;
+                    current.StatusNum = status.StatusNum;
+                    current.StatusValue = status.StatusValue;
                     context.Statuses.Update(current);
                     context.SaveChanges();
                 }

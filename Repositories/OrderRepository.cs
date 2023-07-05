@@ -25,9 +25,19 @@ namespace Repositories
             return OrderDAO.GetOrder();
         }
 
+        public List<Order> GetOrderByDate(string from,string to)
+        {
+            return OrderDAO.GetOrderByDate(from,to);
+        }
+
         public Order GetOrderById(int id)
         {
             return OrderDAO.GetOrderById(id);
+        }
+
+        public List<Order> GetOrderBySaleId(int id)
+        {
+            return OrderDAO.GetOrderBySaleId(id);
         }
 
         public int GetTotalOrder()

@@ -346,6 +346,11 @@ namespace BusinessObject.Models
 
                 entity.Property(e => e.ShippedDate).HasColumnType("datetime");
 
+                entity.HasOne(d => d.Customer)
+                    .WithMany(p => p.Orders)
+                    .HasForeignKey(d => d.CustomerId)
+                    .HasConstraintName("FK_Order_Customers");
+
                 entity.HasOne(d => d.Sale)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.SaleId)
@@ -502,7 +507,9 @@ namespace BusinessObject.Models
             {
                 entity.ToTable("Status");
 
-                entity.Property(e => e.StatusName).HasMaxLength(250);
+                entity.Property(e => e.StatusValue)
+                    .HasMaxLength(40)
+                    .IsFixedLength();
             });
 
             modelBuilder.Entity<Stock>(entity =>

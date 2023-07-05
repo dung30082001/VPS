@@ -11,6 +11,10 @@ namespace Repositories
     {
         List<Order> GetOrder();
 
+        List<Order> GetOrderBySaleId(int id);
+
+        List<Order> GetOrderByDate(string from,string to);
+
         Order GetOrderById(int id);
 
         int GetTotalOrder();

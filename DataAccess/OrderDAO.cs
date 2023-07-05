@@ -1,7 +1,9 @@
 ﻿using BusinessObject.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +18,40 @@ namespace DataAccess
             {
                 using (var context = new VPSContext())
                 {
-                    listOrder = context.Orders.ToList();
+                    listOrder = context.Orders.Include(m => m.Customer).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return listOrder;
+        }
+
+        public static List<Order> GetOrderBySaleId(int id)
+        {
+            var listOrder = new List<Order>();
+            try
+            {
+                using (var context = new VPSContext())
+                {
+                    listOrder = context.Orders.Where(x=>x.SaleId==id).Include(m => m.Customer).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return listOrder;
+        }
+        public static List<Order> GetOrderByDate(String from,String to)
+        {
+            var listOrder = new List<Order>();
+            try
+            {
+                using (var context = new VPSContext())
+                {
+                    listOrder = context.Orders.Where(x=>x.OrderDate>Convert.ToDateTime(from) && x.OrderDate<Convert.ToDateTime(to)).Include(x => x.Customer).ToList();
                 }
             }
             catch (Exception e)

@@ -17,7 +17,8 @@ namespace BusinessObject.Models
         }
 
         public int StatusId { get; set; }
-        public string? StatusName { get; set; }
+        public int? StatusNum { get; set; }
+        public string? StatusValue { get; set; }
 
         public virtual ICollection<Blog> Blogs { get; set; }
         public virtual ICollection<Customer> Customers { get; set; }

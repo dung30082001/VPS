@@ -18,6 +18,18 @@ namespace TestForLogin.Controllers
             return repository.GetOrder();
         }
         [HttpGet]
+        [Route("listbysaleidd")]
+        public async Task<ActionResult<IEnumerable<Order>>> GetOrderBySaleId(int id)
+        {
+            return repository.GetOrderBySaleId(id);
+        }
+        [HttpGet]
+        [Route("listbydate")]
+        public async Task<ActionResult<IEnumerable<Order>>> GetOrderByDate(string from,string to)
+        {
+            return repository.GetOrderByDate(from,to);
+        }
+        [HttpGet]
         [Route("total")]
         public async Task<int> GetTotalOrder()
         {

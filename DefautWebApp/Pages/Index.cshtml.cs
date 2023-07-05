@@ -41,7 +41,7 @@ namespace DefautWebApp.Pages
             listAcc = context.Accounts.ToList();
             listBlog = context.Blogs.ToList();
             finalperson = listAcc.Count;
-            listOr = context.Orders.ToList();
+            listOr = context.Orders.Include(x => x.Customer).ToList();
             finalorder = listOr.Count;
             finalblog = listBlog.Count;
             listO6 = context.Orders.Where(x => x.OrderDate >Convert.ToDateTime("2023-06-01") && x.OrderDate<Convert.ToDateTime("2023-06-30")).ToList();

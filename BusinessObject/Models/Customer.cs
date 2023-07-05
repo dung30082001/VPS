@@ -11,6 +11,7 @@ namespace BusinessObject.Models
             Comments = new HashSet<Comment>();
             FeedBacks = new HashSet<FeedBack>();
             Messages = new HashSet<Message>();
+            Orders = new HashSet<Order>();
             Rents = new HashSet<Rent>();
         }
 
@@ -30,6 +31,7 @@ namespace BusinessObject.Models
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<FeedBack> FeedBacks { get; set; }
         public virtual ICollection<Message> Messages { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
         public virtual ICollection<Rent> Rents { get; set; }
     }
 }
