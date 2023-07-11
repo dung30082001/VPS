@@ -138,6 +138,7 @@ namespace DataAccess
             Order current;
             try
             {
+                OrderDetailDAO.DeleteOrderDetailByOrderId(id);
                 using (var context = new VPSContext())
                 {
                     current = context.Orders.Find(id);

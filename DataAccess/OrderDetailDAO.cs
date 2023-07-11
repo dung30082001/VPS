@@ -134,6 +134,23 @@ namespace DataAccess
                 throw new Exception(e.Message);
             }
         }
+        public static void DeleteOrderDetailByOrderId(int id)
+        {
+            List<OrderDetail> current;
+            try
+            {
+                using (var context = new VPSContext())
+                {
+                    current = context.OrderDetails.Where(x => x.OrderId == id).ToList();
+                    context.OrderDetails.RemoveRange(current);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }
 

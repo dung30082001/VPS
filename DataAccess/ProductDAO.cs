@@ -77,6 +77,8 @@ namespace DataAccess
                     current.Brand = product.Brand;
                     current.Description = product.Description;
                     current.DiscountDate = product.DiscountDate;
+                    current.Quality = product.Quality; 
+                    current.Maintaince = product.Maintaince;
                     context.Products.Update(current);
                     context.SaveChanges();
                 }
