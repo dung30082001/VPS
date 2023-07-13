@@ -105,6 +105,8 @@ namespace DataAccess
             Customer current;
             try
             {
+                RentDAO.DeleteRentByCusId(id);
+                OrderDAO.DeleteOdByCusId(id);
                 using (var context = new VPSContext())
                 {
                     current = context.Customers.Find(id);

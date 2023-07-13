@@ -24,6 +24,27 @@ namespace TestForLogin.Controllers
         {
             return repository.GetProductById(id);
         }
+        [HttpGet]
+        [Route("top5bestsale")]
+        public IActionResult GetTopSellingProducts()
+        {
+            VPSContext context = new VPSContext();
+            var topProducts = context.OrderDetails.Include(x => x.Product)
+                            .Join(context.Products, od => od.ProductId, p => p.ProductId, (od, p) => new { od, p })
+                            .GroupBy(x => new { x.p.ProductId, x.p.ProductName, x.p.Image })
+                            .Select(g => new
+                            {
+                                ProductId = g.Key.ProductId,
+                                ProductName = g.Key.ProductName,
+                                ProductImage = g.Key.Image,
+                                TotalQuantity = g.Sum(x => x.od.Quantity)
+                            })
+                            .OrderByDescending(x => x.TotalQuantity)
+                            .Take(5)
+                            .ToList();
+             return Ok(topProducts);
+        }
+  
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProduct(int id, Product product)
         {

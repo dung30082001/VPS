@@ -7,6 +7,9 @@ C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\APIConnect.d
 C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\APIConnect.pdb
 C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\Castle.Core.dll
 C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\Humanizer.dll
+C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\System.Web.Http.WebHost.dll
 C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -25,6 +28,7 @@ C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\Microsoft.Id
 C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\beast\OneDrive\Desktop\Gittt\TestForLogin\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll

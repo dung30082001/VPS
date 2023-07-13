@@ -138,11 +138,31 @@ namespace DataAccess
             Order current;
             try
             {
+                RentDAO.DeleteRentByOrId(id);
                 OrderDetailDAO.DeleteOrderDetailByOrderId(id);
                 using (var context = new VPSContext())
                 {
                     current = context.Orders.Find(id);
                     context.Orders.Remove(current);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        public static void DeleteOdByCusId(int id)
+        {
+            var listO = new List<Order>();
+            try
+            {
+                RentDAO.DeleteRentByOrId(id);
+                OrderDetailDAO.DeleteOrderDetailByOrderId(id);
+                using (var context = new VPSContext())
+                {
+                    listO = context.Orders.Where(x => x.CustomerId == id).ToList();
+                    context.Orders.RemoveRange(listO);
                     context.SaveChanges();
                 }
             }

@@ -109,5 +109,39 @@ namespace DataAccess
                 throw new Exception(e.Message);
             }
         }
+        public static void DeleteRentByCusId(int id)
+        {
+            var current = new List<Rent>();
+            try
+            {
+                using (var context = new VPSContext())
+                {
+                    current = context.Rents.Where(x => x.CustomerId == id).ToList();
+                    context.Rents.RemoveRange(current);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        public static void DeleteRentByOrId(int id)
+        {
+            var current = new List<Rent>();
+            try
+            {
+                using (var context = new VPSContext())
+                {
+                    current = context.Rents.Where(x => x.OrderId == id).ToList();
+                    context.Rents.RemoveRange(current);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }
