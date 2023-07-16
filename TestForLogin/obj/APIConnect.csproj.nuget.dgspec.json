@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\TestForLogin\\APIConnect.csproj": {}
+    "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\TestForLogin\\APIConnect.csproj": {}
   },
   "projects": {
-    "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj": {
+    "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj",
+        "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\beast\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\obj\\",
+        "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\beast\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -75,14 +75,14 @@
         }
       }
     },
-    "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\beast\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\beast\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -99,8 +99,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj"
+              "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\BusinessObject\\BusinessObject.csproj"
               }
             }
           }
@@ -134,14 +134,14 @@
         }
       }
     },
-    "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\Repositories\\Repositories.csproj": {
+    "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\Repositories\\Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\Repositories\\Repositories.csproj",
+        "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\Repositories\\Repositories.csproj",
         "projectName": "Repositories",
-        "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\Repositories\\Repositories.csproj",
+        "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\Repositories\\Repositories.csproj",
         "packagesPath": "C:\\Users\\beast\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\Repositories\\obj\\",
+        "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\beast\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -158,8 +158,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -193,14 +193,14 @@
         }
       }
     },
-    "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\TestForLogin\\APIConnect.csproj": {
+    "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\TestForLogin\\APIConnect.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\TestForLogin\\APIConnect.csproj",
+        "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\TestForLogin\\APIConnect.csproj",
         "projectName": "APIConnect",
-        "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\TestForLogin\\APIConnect.csproj",
+        "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\TestForLogin\\APIConnect.csproj",
         "packagesPath": "C:\\Users\\beast\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\TestForLogin\\obj\\",
+        "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\TestForLogin\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\beast\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -217,11 +217,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\Repositories\\Repositories.csproj": {
-                "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\Repositories\\Repositories.csproj"
+              "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\Repositories\\Repositories.csproj": {
+                "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\Repositories\\Repositories.csproj"
               }
             }
           }

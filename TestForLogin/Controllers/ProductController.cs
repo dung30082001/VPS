@@ -19,13 +19,35 @@ namespace TestForLogin.Controllers
             VPSContext context = new VPSContext();
             return context.Products.Include(x=>x.Category).Include(x=>x.Status).ToList();
         }
-        [HttpGet("{id}")]
+        [HttpGet("[action]/{cateid}")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductByCateId(int cateid)
+        {
+            return repository.GetProductByCateId(cateid);
+        }
+        [HttpGet("[action]/{id}")]
         public async Task<ActionResult<Product>> GetProductById(int id)
         {
             return repository.GetProductById(id);
         }
+        [HttpGet("[action]/{text}")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductByText(string text)
+        {
+            return repository.GetProductByName(text);
+        }
         [HttpGet]
-        [Route("top5bestsale")]
+        [Route("top4newproduct")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetTop4NewProduct()
+        {
+            return repository.Get4NewProduct();
+        }
+        [HttpGet]
+        [Route("top4expensiveproduct")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetTop4ExpensiveProduct()
+        {
+            return repository.Get4ExpensiveProduct();
+        }
+        [HttpGet]
+        [Route("top4bestsale")]
         public IActionResult GetTopSellingProducts()
         {
             VPSContext context = new VPSContext();
@@ -36,10 +58,10 @@ namespace TestForLogin.Controllers
                             {
                                 ProductId = g.Key.ProductId,
                                 ProductName = g.Key.ProductName,
-                                ProductImage = g.Key.Image,
-                                TotalQuantity = g.Sum(x => x.od.Quantity)
+                                Image = g.Key.Image,
+                                TotalOrder = g.Sum(x => x.od.Quantity)
                             })
-                            .OrderByDescending(x => x.TotalQuantity)
+                            .OrderByDescending(x => x.TotalOrder)
                             .Take(5)
                             .ToList();
              return Ok(topProducts);

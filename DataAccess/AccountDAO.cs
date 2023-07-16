@@ -28,6 +28,22 @@ namespace DataAccess
             }
             return listProducts;
         }
+        public static List<Account> GetAccountEmployee()
+        {
+            var listProducts = new List<Account>();
+            try
+            {
+                using (var context = new VPSContext())
+                {
+                    listProducts = context.Accounts.Where(x => x.RoleId != 4).Include(y => y.Role).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return listProducts;
+        }
         public static Account GetAccountById(int id)
         {
             var account = new Account();

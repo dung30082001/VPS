@@ -2447,11 +2447,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DefautWebApp\\DefautWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\DefautWebApp\\DefautWebApp.csproj",
       "projectName": "DefautWebApp",
-      "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DefautWebApp\\DefautWebApp.csproj",
+      "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\DefautWebApp\\DefautWebApp.csproj",
       "packagesPath": "C:\\Users\\beast\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DefautWebApp\\obj\\",
+      "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\DefautWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\beast\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2468,8 +2468,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj"
+            "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\BusinessObject\\BusinessObject.csproj"
             }
           }
         }

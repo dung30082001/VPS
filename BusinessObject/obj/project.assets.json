@@ -2348,11 +2348,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj",
+      "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\BusinessObject\\BusinessObject.csproj",
       "projectName": "BusinessObject",
-      "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj",
+      "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\BusinessObject\\BusinessObject.csproj",
       "packagesPath": "C:\\Users\\beast\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\obj\\",
+      "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\BusinessObject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\beast\\AppData\\Roaming\\NuGet\\NuGet.Config",

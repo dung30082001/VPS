@@ -19,6 +19,12 @@ namespace TestForLogin.Controllers
             return repository.GetAccount();
         }
         [HttpGet]
+        [Route("GetAllEmployee")]
+        public async Task<ActionResult<IEnumerable<Account>>> GetAllEmployee()
+        {
+            return repository.GetAccountEmployee();
+        }
+        [HttpGet]
         [Route("total")]
         public async Task<int> GetTotalAccount()
         {

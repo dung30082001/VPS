@@ -11,6 +11,8 @@ namespace Repositories
     {
         List<Account> GetAccount();
 
+        List<Account> GetAccountEmployee();
+
         Account GetAccountById(int id);
 
         int GetTotalAccount();

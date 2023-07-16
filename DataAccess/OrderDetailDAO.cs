@@ -17,7 +17,7 @@ namespace DataAccess
             {
                 using (var context = new VPSContext())
                 {
-                    listOrderD = context.OrderDetails.ToList();
+                    listOrderD = context.OrderDetails.Include(x=>x.Product).ToList();
                 }
             }
             catch (Exception e)
@@ -33,7 +33,7 @@ namespace DataAccess
             {
                 using (var context = new VPSContext())
                 {
-                    od = context.OrderDetails.Find(id);
+                    od = context.OrderDetails.Include(x => x.Product).FirstOrDefault(x=>x.OrderDetailId==id);
                 }
             }
             catch (Exception e)
@@ -50,7 +50,7 @@ namespace DataAccess
             {
                 using (var context = new VPSContext())
                 {
-                    listOrderD = context.OrderDetails.Where(x=>x.OrderId==id).ToList();
+                    listOrderD = context.OrderDetails.Include(x => x.Product).Where(x=>x.OrderId==id).ToList();
                 }
             }
             catch (Exception e)
@@ -67,7 +67,7 @@ namespace DataAccess
             {
                 using (var context = new VPSContext())
                 {
-                    listO = context.OrderDetails.ToList();
+                    listO = context.OrderDetails.Include(x => x.Product).ToList();
                     foreach (var item in listO)
                     {
                         finalOd += item.UnitPrice.Value;

@@ -2301,11 +2301,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\DataAccess.csproj",
+      "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\beast\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\beast\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2322,8 +2322,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\BusinessObject\\BusinessObject.csproj"
+            "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\BusinessObject\\BusinessObject.csproj"
             }
           }
         }

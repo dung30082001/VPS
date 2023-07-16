@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pFlTs+QkTkJDWUyV3aZbM/7kJogygpLSGpWh8Otlz1XRUxNW750NgNTZTg6odnzH3f54dRA0VE8VxicutxyhVQ==",
+  "dgSpecHash": "pFC+bUMa+uTbl7VzcnkKHHBicZFGhOQ7SGxz0hcWPz81vdeQ83cc9qEJMPPMtinWatYURL6l2Uzs7oR8HGLzEQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\beast\\OneDrive\\Desktop\\Gittt\\TestForLogin\\APIConnect.csproj",
+  "projectFilePath": "C:\\Users\\beast\\OneDrive\\Desktop\\VPSFinal\\VPS\\TestForLogin\\APIConnect.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\beast\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\beast\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

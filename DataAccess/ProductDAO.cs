@@ -26,6 +26,80 @@ namespace DataAccess
             }
             return product;
         }
+        public static List<Product> Get4NewProduct()
+        {
+            List<Product> product;
+            try
+            {
+                using (var context = new VPSContext())
+                {
+                    product = context.Products
+                        .OrderByDescending(p => p.ProductId)
+                        .Take(4)
+                        .ToList(); ;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return product;
+        }
+        public static List<Product> Get4ExpensiveProduct()
+        {
+            List<Product> product;
+            try
+            {
+                using (var context = new VPSContext())
+                {
+                    product = context.Products
+                        .OrderByDescending(p => p.UnitPrice)
+                        .Take(4)
+                        .ToList(); ;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return product;
+        }
+        public static List<Product> GetProductByCateId(int cateId)
+        {
+            List<Product> product;
+            try
+            {
+                using (var context = new VPSContext())
+                {
+                    product = context.Products
+                        .Where(x => x.CategoryId == cateId).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return product;
+        }
+
+        public static List<Product> GetProductByString(string text)
+        {
+            List<Product> product;
+            try
+            {
+                using (var context = new VPSContext())
+                {
+                    product = context.Products
+                        .Where(p => p.ProductName.Contains(text))
+                        .ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return product;
+        }
         public static Product GetProductById(int id)
         {
             var product = new Product();

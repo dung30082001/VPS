@@ -11,6 +11,14 @@ namespace Repositories
     {
         List<Product> GetProduct();
 
+        List<Product> Get4NewProduct();
+
+        List<Product> Get4ExpensiveProduct();
+
+        List<Product> GetProductByCateId(int cateId);
+
+        List<Product> GetProductByName(string text);
+
         Product GetProductById(int id);
 
         int GetTotalProduct();

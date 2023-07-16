@@ -30,6 +30,11 @@ namespace Repositories
             return AccountDAO.GetAccountById(id);
         }
 
+        public List<Account> GetAccountEmployee()
+        {
+            return AccountDAO.GetAccountEmployee();
+        }
+
         public int GetTotalAccount()
         {
             return AccountDAO.GetTotalAccount();
