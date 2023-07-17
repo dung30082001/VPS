@@ -27,6 +27,7 @@ namespace BusinessObject.Models
         public virtual DbSet<Conversation> Conversations { get; set; } = null!;
         public virtual DbSet<Customer> Customers { get; set; } = null!;
         public virtual DbSet<FeedBack> FeedBacks { get; set; } = null!;
+        public virtual DbSet<Hstatus> Hstatuses { get; set; } = null!;
         public virtual DbSet<Image> Images { get; set; } = null!;
         public virtual DbSet<Manager> Managers { get; set; } = null!;
         public virtual DbSet<Message> Messages { get; set; } = null!;
@@ -34,6 +35,7 @@ namespace BusinessObject.Models
         public virtual DbSet<OrderDetail> OrderDetails { get; set; } = null!;
         public virtual DbSet<Product> Products { get; set; } = null!;
         public virtual DbSet<ProductDetail> ProductDetails { get; set; } = null!;
+        public virtual DbSet<Pstatus> Pstatuses { get; set; } = null!;
         public virtual DbSet<Qrcode> Qrcodes { get; set; } = null!;
         public virtual DbSet<Rent> Rents { get; set; } = null!;
         public virtual DbSet<Role> Roles { get; set; } = null!;
@@ -137,6 +139,11 @@ namespace BusinessObject.Models
                 entity.Property(e => e.Phone).HasMaxLength(250);
 
                 entity.Property(e => e.StatusId).HasColumnName("StatusID");
+
+                entity.HasOne(d => d.Status)
+                    .WithMany(p => p.Admins)
+                    .HasForeignKey(d => d.StatusId)
+                    .HasConstraintName("FK_Admin_HStatus");
             });
 
             modelBuilder.Entity<Blog>(entity =>
@@ -153,11 +160,6 @@ namespace BusinessObject.Models
                     .WithMany(p => p.Blogs)
                     .HasForeignKey(d => d.BloggerId)
                     .HasConstraintName("FK_Blog_Blogger");
-
-                entity.HasOne(d => d.Status)
-                    .WithMany(p => p.Blogs)
-                    .HasForeignKey(d => d.StatusId)
-                    .HasConstraintName("FK_Blog_Status");
             });
 
             modelBuilder.Entity<Blogger>(entity =>
@@ -216,6 +218,11 @@ namespace BusinessObject.Models
                 entity.Property(e => e.FullName).HasMaxLength(200);
 
                 entity.Property(e => e.Phone).HasMaxLength(50);
+
+                entity.HasOne(d => d.Status)
+                    .WithMany(p => p.Consultants)
+                    .HasForeignKey(d => d.StatusId)
+                    .HasConstraintName("FK_Consultant_HStatus");
             });
 
             modelBuilder.Entity<Contract>(entity =>
@@ -257,7 +264,7 @@ namespace BusinessObject.Models
                 entity.HasOne(d => d.Status)
                     .WithMany(p => p.Customers)
                     .HasForeignKey(d => d.StatusId)
-                    .HasConstraintName("FK_Customers_Status");
+                    .HasConstraintName("FK_Customers_HStatus");
             });
 
             modelBuilder.Entity<FeedBack>(entity =>
@@ -285,6 +292,16 @@ namespace BusinessObject.Models
                     .HasConstraintName("FK_FeedBack_Shipper");
             });
 
+            modelBuilder.Entity<Hstatus>(entity =>
+            {
+                entity.HasKey(e => e.StatusId)
+                    .HasName("PK__HStatus__C8EE206385F16CEB");
+
+                entity.ToTable("HStatus");
+
+                entity.Property(e => e.StatusValue).HasMaxLength(50);
+            });
+
             modelBuilder.Entity<Image>(entity =>
             {
                 entity.ToTable("Image");
@@ -309,6 +326,11 @@ namespace BusinessObject.Models
                 entity.Property(e => e.FullName).HasMaxLength(200);
 
                 entity.Property(e => e.Phone).HasMaxLength(50);
+
+                entity.HasOne(d => d.Status)
+                    .WithMany(p => p.Managers)
+                    .HasForeignKey(d => d.StatusId)
+                    .HasConstraintName("FK_Manager_HStatus");
             });
 
             modelBuilder.Entity<Message>(entity =>
@@ -331,18 +353,23 @@ namespace BusinessObject.Models
                     .WithMany(p => p.Messages)
                     .HasForeignKey(d => d.CustomerId)
                     .HasConstraintName("FK_Messages_Customers");
-
-                entity.HasOne(d => d.Status)
-                    .WithMany(p => p.Messages)
-                    .HasForeignKey(d => d.StatusId)
-                    .HasConstraintName("FK_Messages_Status");
             });
 
             modelBuilder.Entity<Order>(entity =>
             {
                 entity.ToTable("Order");
 
+                entity.Property(e => e.CustomerConfirm).HasColumnType("datetime");
+
+                entity.Property(e => e.ManagerConfirm).HasColumnType("datetime");
+
                 entity.Property(e => e.OrderDate).HasColumnType("datetime");
+
+                entity.Property(e => e.SaleConfirm).HasColumnType("datetime");
+
+                entity.Property(e => e.ShipConfirm).HasColumnType("datetime");
+
+                entity.Property(e => e.ShipCost).HasColumnType("money");
 
                 entity.Property(e => e.ShippedDate).HasColumnType("datetime");
 
@@ -360,6 +387,12 @@ namespace BusinessObject.Models
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.ShipId)
                     .HasConstraintName("FK_Order_Shipper");
+
+                entity.HasOne(d => d.StatusNavigation)
+                    .WithMany(p => p.Orders)
+                    .HasForeignKey(d => d.Status)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Order_Status");
             });
 
             modelBuilder.Entity<OrderDetail>(entity =>
@@ -403,7 +436,7 @@ namespace BusinessObject.Models
                 entity.HasOne(d => d.Status)
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.StatusId)
-                    .HasConstraintName("FK_Product_Status");
+                    .HasConstraintName("FK_Product_PStatus");
             });
 
             modelBuilder.Entity<ProductDetail>(entity =>
@@ -415,6 +448,16 @@ namespace BusinessObject.Models
                 entity.Property(e => e.Description)
                     .HasMaxLength(100)
                     .IsFixedLength();
+            });
+
+            modelBuilder.Entity<Pstatus>(entity =>
+            {
+                entity.HasKey(e => e.StatusId)
+                    .HasName("PK__PStatus__C8EE2063318176CD");
+
+                entity.ToTable("PStatus");
+
+                entity.Property(e => e.StatusValue).HasMaxLength(50);
             });
 
             modelBuilder.Entity<Qrcode>(entity =>
@@ -481,7 +524,7 @@ namespace BusinessObject.Models
                 entity.HasOne(d => d.Status)
                     .WithMany(p => p.Sales)
                     .HasForeignKey(d => d.StatusId)
-                    .HasConstraintName("FK_Sale_Status");
+                    .HasConstraintName("FK_Sale_HStatus");
             });
 
             modelBuilder.Entity<Shipper>(entity =>
@@ -501,15 +544,18 @@ namespace BusinessObject.Models
                 entity.Property(e => e.FullName).HasMaxLength(200);
 
                 entity.Property(e => e.Phone).HasMaxLength(50);
+
+                entity.HasOne(d => d.Status)
+                    .WithMany(p => p.Shippers)
+                    .HasForeignKey(d => d.StatusId)
+                    .HasConstraintName("FK_Shipper_HStatus");
             });
 
             modelBuilder.Entity<Status>(entity =>
             {
                 entity.ToTable("Status");
 
-                entity.Property(e => e.StatusValue)
-                    .HasMaxLength(40)
-                    .IsFixedLength();
+                entity.Property(e => e.StatusValue).HasMaxLength(50);
             });
 
             modelBuilder.Entity<Stock>(entity =>
@@ -551,7 +597,7 @@ namespace BusinessObject.Models
                 entity.HasOne(d => d.Status)
                     .WithMany(p => p.Suppliers)
                     .HasForeignKey(d => d.StatusId)
-                    .HasConstraintName("FK_Supplier_Status");
+                    .HasConstraintName("FK_Supplier_HStatus");
             });
 
             modelBuilder.Entity<SupplierProduct>(entity =>
@@ -573,6 +619,11 @@ namespace BusinessObject.Models
                     .WithMany(p => p.SupplierProducts)
                     .HasForeignKey(d => d.CategoryId)
                     .HasConstraintName("FK_SupplierProduct_Category");
+
+                entity.HasOne(d => d.Status)
+                    .WithMany(p => p.SupplierProducts)
+                    .HasForeignKey(d => d.StatusId)
+                    .HasConstraintName("FK_SupplierProduct_PStatus");
             });
 
             modelBuilder.Entity<SupplierStock>(entity =>
@@ -607,7 +658,7 @@ namespace BusinessObject.Models
                 entity.HasOne(d => d.Status)
                     .WithMany(p => p.Technicals)
                     .HasForeignKey(d => d.StatusId)
-                    .HasConstraintName("FK_Technical_Status");
+                    .HasConstraintName("FK_Technical_HStatus");
             });
 
             OnModelCreatingPartial(modelBuilder);

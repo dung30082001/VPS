@@ -19,6 +19,7 @@ namespace BusinessObject.Models
         public string? Avatar { get; set; }
         public int? SaleId { get; set; }
 
+        public virtual Hstatus? Status { get; set; }
         public virtual ICollection<Account> Accounts { get; set; }
     }
 }

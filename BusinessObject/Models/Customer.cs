@@ -26,7 +26,7 @@ namespace BusinessObject.Models
         public bool? IsValid { get; set; }
         public int? Voucher { get; set; }
 
-        public virtual Status? Status { get; set; }
+        public virtual Hstatus? Status { get; set; }
         public virtual ICollection<Account> Accounts { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<FeedBack> FeedBacks { get; set; }

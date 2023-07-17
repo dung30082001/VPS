@@ -23,6 +23,7 @@ namespace BusinessObject.Models
         public int? NumberOfUse { get; set; }
 
         public virtual Category? Category { get; set; }
+        public virtual Pstatus? Status { get; set; }
         public virtual ICollection<Stock> Stocks { get; set; }
         public virtual ICollection<SupplierStock> SupplierStocks { get; set; }
     }

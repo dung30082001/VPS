@@ -16,6 +16,5 @@ namespace BusinessObject.Models
         public virtual Consultant? Consultant { get; set; }
         public virtual Conversation? Conversation { get; set; }
         public virtual Customer? Customer { get; set; }
-        public virtual Status? Status { get; set; }
     }
 }

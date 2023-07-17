@@ -15,6 +15,5 @@ namespace BusinessObject.Models
         public int? CategoryId { get; set; }
 
         public virtual Blogger? Blogger { get; set; }
-        public virtual Status? Status { get; set; }
     }
 }

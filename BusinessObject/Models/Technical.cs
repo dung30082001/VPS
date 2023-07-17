@@ -20,7 +20,7 @@ namespace BusinessObject.Models
         public string? Avatar { get; set; }
         public int? StatusId { get; set; }
 
-        public virtual Status? Status { get; set; }
+        public virtual Hstatus? Status { get; set; }
         public virtual ICollection<Account> Accounts { get; set; }
         public virtual ICollection<Contract> Contracts { get; set; }
         public virtual ICollection<Stock> Stocks { get; set; }

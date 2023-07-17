@@ -22,6 +22,7 @@ namespace BusinessObject.Models
         public int? StatusId { get; set; }
         public int? CustomerId { get; set; }
 
+        public virtual Hstatus? Status { get; set; }
         public virtual ICollection<Account> Accounts { get; set; }
         public virtual ICollection<FeedBack> FeedBacks { get; set; }
         public virtual ICollection<Order> Orders { get; set; }

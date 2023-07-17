@@ -67,7 +67,7 @@ namespace DataAccess
             {
                 using (var context = new VPSContext())
                 {
-                    listO = context.OrderDetails.Include(x => x.Product).ToList();
+                    listO = context.OrderDetails.ToList();
                     foreach (var item in listO)
                     {
                         finalOd += item.UnitPrice.Value;

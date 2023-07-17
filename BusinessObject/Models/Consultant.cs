@@ -19,6 +19,7 @@ namespace BusinessObject.Models
         public DateTime? Dob { get; set; }
         public int? StatusId { get; set; }
 
+        public virtual Hstatus? Status { get; set; }
         public virtual ICollection<Account> Accounts { get; set; }
         public virtual ICollection<FeedBack> FeedBacks { get; set; }
         public virtual ICollection<Message> Messages { get; set; }

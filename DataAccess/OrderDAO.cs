@@ -109,6 +109,11 @@ namespace DataAccess
                     current.ShipId = od.ShipId;
                     current.Price = od.Price;
                     current.Status = od.Status;
+                    current.ShipCost = od.ShipCost;
+                    current.ManagerConfirm = od.ManagerConfirm;
+                    current.SaleConfirm = od.SaleConfirm;
+                    current.ShipConfirm = od.ShipConfirm;
+                    current.CustomerConfirm = od.CustomerConfirm;
                     context.Orders.Update(current);
                     context.SaveChanges();
                 }

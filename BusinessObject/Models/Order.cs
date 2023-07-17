@@ -20,10 +20,16 @@ namespace BusinessObject.Models
         public int? ShipId { get; set; }
         public double Price { get; set; }
         public int Status { get; set; }
+        public decimal? ShipCost { get; set; }
+        public DateTime? ManagerConfirm { get; set; }
+        public DateTime? SaleConfirm { get; set; }
+        public DateTime? ShipConfirm { get; set; }
+        public DateTime? CustomerConfirm { get; set; }
 
         public virtual Customer? Customer { get; set; }
         public virtual Sale? Sale { get; set; }
         public virtual Shipper? Ship { get; set; }
+        public virtual Status StatusNavigation { get; set; } = null!;
         public virtual ICollection<FeedBack> FeedBacks { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual ICollection<Rent> Rents { get; set; }
