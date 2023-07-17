@@ -24,7 +24,7 @@ namespace BusinessObject.Models
         public string? Moneytype { get; set; }
         public int? Quality { get; set; }
         public string? Maintaince { get; set; }
-        public int? Coupon { get; set; }
+        public int? Discount { get; set; }
 
         public virtual Category? Category { get; set; }
         public virtual Pstatus? Status { get; set; }
