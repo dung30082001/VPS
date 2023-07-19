@@ -40,6 +40,11 @@ namespace Repositories
             return OrderDAO.GetOrderBySaleId(id);
         }
 
+        public List<Order> GetOrderByShipId(int id)
+        {
+            return OrderDAO.GetOrderByShipId(id);
+        }
+
         public int GetTotalOrder()
         {
             return OrderDAO.GetTotalOrder();

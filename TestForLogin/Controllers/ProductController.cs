@@ -48,7 +48,7 @@ namespace TestForLogin.Controllers
         }
         [HttpGet]
         [Route("top4bestsale")]
-        public IActionResult GetTopSellingProducts()
+        public IActionResult GetTop4SellingProducts()
         {
             VPSContext context = new VPSContext();
             var topProducts = context.OrderDetails.Include(x => x.Product)
@@ -62,11 +62,32 @@ namespace TestForLogin.Controllers
                                 TotalOrder = g.Sum(x => x.od.Quantity)
                             })
                             .OrderByDescending(x => x.TotalOrder)
-                            .Take(5)
+                            .Take(4)
                             .ToList();
              return Ok(topProducts);
         }
-  
+
+        [HttpGet]
+        [Route("top8bestsale")]
+        public IActionResult GetTop8SellingProducts()
+        {
+            VPSContext context = new VPSContext();
+            var topProducts = context.OrderDetails.Include(x => x.Product)
+                            .Join(context.Products, od => od.ProductId, p => p.ProductId, (od, p) => new { od, p })
+                            .GroupBy(x => new { x.p.ProductId, x.p.ProductName, x.p.Image })
+                            .Select(g => new
+                            {
+                                ProductId = g.Key.ProductId,
+                                ProductName = g.Key.ProductName,
+                                Image = g.Key.Image,
+                                TotalOrder = g.Sum(x => x.od.Quantity)
+                            })
+                            .OrderByDescending(x => x.TotalOrder)
+                            .Take(8)
+                            .ToList();
+            return Ok(topProducts);
+        }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProduct(int id, Product product)
         {

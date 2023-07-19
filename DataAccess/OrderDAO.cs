@@ -44,6 +44,22 @@ namespace DataAccess
             }
             return listOrder;
         }
+        public static List<Order> GetOrderByShipId(int id)
+        {
+            var listOrder = new List<Order>();
+            try
+            {
+                using (var context = new VPSContext())
+                {
+                    listOrder = context.Orders.Where(x=>x.ShipId==id).Include(m => m.Ship).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return listOrder;
+        }
         public static List<Order> GetOrderByDate(String from,String to)
         {
             var listOrder = new List<Order>();
@@ -108,7 +124,7 @@ namespace DataAccess
                     current.ShippedDate = od.ShippedDate;
                     current.ShipId = od.ShipId;
                     current.Price = od.Price;
-                    current.Status = od.Status;
+                    current.StatusId = od.StatusId;
                     current.ShipCost = od.ShipCost;
                     current.ManagerConfirm = od.ManagerConfirm;
                     current.SaleConfirm = od.SaleConfirm;

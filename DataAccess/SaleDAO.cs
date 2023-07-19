@@ -53,10 +53,6 @@ namespace DataAccess
                     current.Phone = sale.Phone;
                     current.Address = sale.Address;
                     current.Dob = sale.Dob;
-                    current.OrderId = sale.OrderId;
-                    current.StatusId = sale.StatusId;
-                    current.ShipperId = sale.ShipperId;
-                    current.CustomerId = sale.CustomerId;
                     current.Avatar = sale.Avatar;
                     context.Sales.Update(current);
                     context.SaveChanges();

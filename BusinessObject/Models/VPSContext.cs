@@ -387,12 +387,6 @@ namespace BusinessObject.Models
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.ShipId)
                     .HasConstraintName("FK_Order_Shipper");
-
-                entity.HasOne(d => d.StatusNavigation)
-                    .WithMany(p => p.Orders)
-                    .HasForeignKey(d => d.Status)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Order_Status");
             });
 
             modelBuilder.Entity<OrderDetail>(entity =>

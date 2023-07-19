@@ -20,6 +20,11 @@ namespace Repositories
             CustomerDAO.DeleteCus(id);
         }
 
+        public List<Customer> Get8Customer()
+        {
+            return CustomerDAO.Get8Customer();
+        }
+
         public List<Customer> GetCustomer()
         {
             return CustomerDAO.GetCustomer();
@@ -30,10 +35,6 @@ namespace Repositories
            return CustomerDAO.GetCustomerById(id);
         }
 
-        //public Customer GetCustomerByOrderId(int id)
-        //{
-        //   // return CustomerDAO.GetCustomerByOrderId(id);
-        //}
 
         public int GetTotalCustomer()
         {

@@ -17,12 +17,12 @@ namespace TestForLogin.Controllers
         {
             return repository.GetCustomer(); 
         }
-        //[HttpGet]
-        //[Route("customerorderid")]
-        //public  Customer GetCustomerByOrderId(int id)
-        //{
-        //    return repository.GetCustomerByOrderId(id);
-        //}
+        [HttpGet]
+        [Route("get8customer")]
+        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomerByOrderId()
+        {
+            return repository.Get8Customer();
+        }
         [HttpGet]
         [Route("total")]
         public async Task<int> GetTotalCustomer()

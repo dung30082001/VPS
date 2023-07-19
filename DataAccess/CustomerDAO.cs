@@ -26,6 +26,22 @@ namespace DataAccess
             }
             return listCustomers;
         }
+        public static List<Customer> Get8Customer()
+        {
+            var listCustomers = new List<Customer>();
+            try
+            {
+                using (var context = new VPSContext())
+                {
+                    listCustomers = context.Customers.OrderBy(x=>x.CustomerId).Take(8).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return listCustomers;
+        }
         public static Customer GetCustomerById(int id)
         {
             var cus = new Customer();
@@ -42,6 +58,7 @@ namespace DataAccess
             }
             return cus;
         }
+
         public static int GetTotalCus()
         {
             int finalCus;

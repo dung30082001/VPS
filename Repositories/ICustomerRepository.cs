@@ -11,9 +11,10 @@ namespace Repositories
     {
         List<Customer> GetCustomer();
 
+        List<Customer> Get8Customer();
+
         Customer GetCustomerById(int id);
 
-        //Customer GetCustomerByOrderId(int id);
         int GetTotalCustomer();
 
         void UpdateCustomer(int id, Customer cus);

@@ -16,10 +16,7 @@ namespace BusinessObject.Models
         public string? Phone { get; set; }
         public string? Address { get; set; }
         public DateTime? Dob { get; set; }
-        public int? OrderId { get; set; }
         public int? StatusId { get; set; }
-        public int? ShipperId { get; set; }
-        public int? CustomerId { get; set; }
         public string? Avatar { get; set; }
 
         public virtual Hstatus? Status { get; set; }

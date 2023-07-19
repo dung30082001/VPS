@@ -18,9 +18,7 @@ namespace BusinessObject.Models
         public string? Address { get; set; }
         public DateTime? Dob { get; set; }
         public string? Avatar { get; set; }
-        public int? OrderId { get; set; }
         public int? StatusId { get; set; }
-        public int? CustomerId { get; set; }
 
         public virtual Hstatus? Status { get; set; }
         public virtual ICollection<Account> Accounts { get; set; }

@@ -13,6 +13,8 @@ namespace Repositories
 
         List<Order> GetOrderBySaleId(int id);
 
+        List<Order> GetOrderByShipId(int id);
+
         List<Order> GetOrderByDate(string from,string to);
 
         Order GetOrderById(int id);

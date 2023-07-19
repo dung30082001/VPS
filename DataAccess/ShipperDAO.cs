@@ -53,9 +53,7 @@ namespace DataAccess
                     current.Phone = shipper.Phone;
                     current.Address = shipper.Address;
                     current.Dob = shipper.Dob;
-                    current.OrderId = shipper.OrderId;
                     current.StatusId = shipper.StatusId;
-                    current.CustomerId = shipper.CustomerId;
                     current.Avatar = shipper.Avatar;
                     context.Shippers.Update(current);
                     context.SaveChanges();

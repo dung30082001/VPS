@@ -19,7 +19,7 @@ namespace BusinessObject.Models
         public DateTime? ShippedDate { get; set; }
         public int? ShipId { get; set; }
         public double Price { get; set; }
-        public int Status { get; set; }
+        public int StatusId { get; set; }
         public decimal? ShipCost { get; set; }
         public DateTime? ManagerConfirm { get; set; }
         public DateTime? SaleConfirm { get; set; }
@@ -29,7 +29,6 @@ namespace BusinessObject.Models
         public virtual Customer? Customer { get; set; }
         public virtual Sale? Sale { get; set; }
         public virtual Shipper? Ship { get; set; }
-        public virtual Status StatusNavigation { get; set; } = null!;
         public virtual ICollection<FeedBack> FeedBacks { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual ICollection<Rent> Rents { get; set; }

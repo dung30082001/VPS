@@ -24,7 +24,13 @@ namespace TestForLogin.Controllers
             return repository.GetOrderBySaleId(id);
         }
         [HttpGet]
-        [Route("top4bestbuyer")]
+        [Route("listbyshipidd")]
+        public async Task<ActionResult<IEnumerable<Order>>> GetOrderByShipId(int id)
+        {
+            return repository.GetOrderByShipId(id);
+        }
+        [HttpGet]
+        [Route("top8bestbuyer")]
         public IActionResult GetTop4()
         {
             VPSContext context = new VPSContext();
@@ -32,7 +38,7 @@ namespace TestForLogin.Controllers
                 .GroupBy(o => o.CustomerId)
                 .Select(g => new { CustomerId = g.Key, TotalPrice = g.Sum(o => o.Price) })
                 .OrderByDescending(x => x.TotalPrice)
-                            .Take(4)
+                            .Take(8)
                 .ToList();
             return Ok(list);
         }
