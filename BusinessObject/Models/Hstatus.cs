@@ -7,6 +7,7 @@ namespace BusinessObject.Models
     {
         public Hstatus()
         {
+            Accounts = new HashSet<Account>();
             Admins = new HashSet<Admin>();
             Consultants = new HashSet<Consultant>();
             Customers = new HashSet<Customer>();
@@ -21,6 +22,7 @@ namespace BusinessObject.Models
         public int? StatusNum { get; set; }
         public string? StatusValue { get; set; }
 
+        public virtual ICollection<Account> Accounts { get; set; }
         public virtual ICollection<Admin> Admins { get; set; }
         public virtual ICollection<Consultant> Consultants { get; set; }
         public virtual ICollection<Customer> Customers { get; set; }

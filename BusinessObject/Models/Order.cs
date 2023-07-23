@@ -25,6 +25,7 @@ namespace BusinessObject.Models
         public DateTime? SaleConfirm { get; set; }
         public DateTime? ShipConfirm { get; set; }
         public DateTime? CustomerConfirm { get; set; }
+        public DateTime? ShipSuccessConfirm { get; set; }
 
         public virtual Customer? Customer { get; set; }
         public virtual Sale? Sale { get; set; }

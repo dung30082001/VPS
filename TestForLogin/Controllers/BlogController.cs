@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Repositories;
 
-namespace TestForLogin.Controllers
+namespace APIConnect.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -1,4 +1,5 @@
 ﻿using BusinessObject.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace DataAccess
             {
                 using (var context = new VPSContext())
                 {
-                    listCustomers = context.Customers.ToList();
+                    listCustomers = context.Customers.Include(x=>x.Status).ToList();
                 }
             }
             catch (Exception e)

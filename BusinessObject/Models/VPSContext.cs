@@ -113,6 +113,11 @@ namespace BusinessObject.Models
                     .HasForeignKey(d => d.ShipperId)
                     .HasConstraintName("FK_Account_Shipper");
 
+                entity.HasOne(d => d.StatusNavigation)
+                    .WithMany(p => p.Accounts)
+                    .HasForeignKey(d => d.Status)
+                    .HasConstraintName("FK_Account_HStatus");
+
                 entity.HasOne(d => d.Supplier)
                     .WithMany(p => p.Accounts)
                     .HasForeignKey(d => d.SupplierId)
@@ -370,6 +375,8 @@ namespace BusinessObject.Models
                 entity.Property(e => e.ShipConfirm).HasColumnType("datetime");
 
                 entity.Property(e => e.ShipCost).HasColumnType("money");
+
+                entity.Property(e => e.ShipSuccessConfirm).HasColumnType("datetime");
 
                 entity.Property(e => e.ShippedDate).HasColumnType("datetime");
 

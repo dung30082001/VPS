@@ -1,4 +1,4 @@
-namespace TestForLogin
+namespace APIConnect
 {
     public class WeatherForecast
     {

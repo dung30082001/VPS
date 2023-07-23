@@ -6,7 +6,7 @@ using Repositories;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace TestForLogin.Controllers
+namespace APIConnect.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -17,7 +17,7 @@ namespace TestForLogin.Controllers
         public async Task<ActionResult<IEnumerable<Product>>> GetProduct()
         {
             VPSContext context = new VPSContext();
-            return context.Products.Include(x=>x.Category).Include(x=>x.Status).ToList();
+            return context.Products.Include(x => x.Category).Include(x => x.Status).ToList();
         }
         [HttpGet("[action]/{cateid}")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProductByCateId(int cateid)
@@ -53,18 +53,27 @@ namespace TestForLogin.Controllers
             VPSContext context = new VPSContext();
             var topProducts = context.OrderDetails.Include(x => x.Product)
                             .Join(context.Products, od => od.ProductId, p => p.ProductId, (od, p) => new { od, p })
-                            .GroupBy(x => new { x.p.ProductId, x.p.ProductName, x.p.Image })
+                            .GroupBy(x => new { x.p.ProductId, x.p.ProductName, x.p.Image, x.p.UnitPrice, x.p.UnitInStock, x.p.StatusId, x.p.Brand, x.p.Description, x.p.DiscountDate, x.p.Discount, x.p.Quality, x.p.Maintaince })
                             .Select(g => new
                             {
-                                ProductId = g.Key.ProductId,
-                                ProductName = g.Key.ProductName,
-                                Image = g.Key.Image,
+                                g.Key.ProductId,
+                                g.Key.ProductName,
+                                g.Key.UnitPrice,
+                                g.Key.StatusId,
+                                g.Key.Brand,
+                                g.Key.Description,
+                                g.Key.Discount,
+                                g.Key.DiscountDate,
+                                g.Key.Quality,
+                                Maintainance = g.Key.Maintaince,
+                                g.Key.UnitInStock,
+                                g.Key.Image,
                                 TotalOrder = g.Sum(x => x.od.Quantity)
                             })
                             .OrderByDescending(x => x.TotalOrder)
                             .Take(4)
                             .ToList();
-             return Ok(topProducts);
+            return Ok(topProducts);
         }
 
         [HttpGet]
@@ -77,9 +86,9 @@ namespace TestForLogin.Controllers
                             .GroupBy(x => new { x.p.ProductId, x.p.ProductName, x.p.Image })
                             .Select(g => new
                             {
-                                ProductId = g.Key.ProductId,
-                                ProductName = g.Key.ProductName,
-                                Image = g.Key.Image,
+                                g.Key.ProductId,
+                                g.Key.ProductName,
+                                g.Key.Image,
                                 TotalOrder = g.Sum(x => x.od.Quantity)
                             })
                             .OrderByDescending(x => x.TotalOrder)

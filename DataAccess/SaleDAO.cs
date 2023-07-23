@@ -1,4 +1,5 @@
 ﻿using BusinessObject.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace DataAccess
             {
                 using (var context = new VPSContext())
                 {
-                    listSale = context.Sales.ToList();
+                    listSale = context.Sales.Include(x=>x.Status).ToList();
                 }
             }
             catch (Exception e)
@@ -54,6 +55,7 @@ namespace DataAccess
                     current.Address = sale.Address;
                     current.Dob = sale.Dob;
                     current.Avatar = sale.Avatar;
+                    current.StatusId = sale.StatusId;
                     context.Sales.Update(current);
                     context.SaveChanges();
                 }

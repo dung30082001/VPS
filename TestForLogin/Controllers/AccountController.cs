@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Repositories;
 
-namespace TestForLogin.Controllers
+namespace APIConnect.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -34,7 +34,7 @@ namespace TestForLogin.Controllers
         {
             VPSContext context = new VPSContext();
             var totalAccount = context.Accounts
-        .Where(o => o.CreatedDate >= Convert.ToDateTime("2023-02-01") && o.CreatedDate <= Convert.ToDateTime("2023-02-30"))
+        .Where(o => o.CreatedDate >= Convert.ToDateTime("2023-02-01") && o.CreatedDate <= Convert.ToDateTime("2023-02-28"))
         .Count();
             return Ok(totalAccount);
         }
@@ -164,7 +164,7 @@ namespace TestForLogin.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAccount(int id)
         {
-            var account =  repository.GetAccountById(id);
+            var account = repository.GetAccountById(id);
             if (account == null)
             {
                 return NotFound();

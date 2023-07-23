@@ -130,6 +130,7 @@ namespace DataAccess
                     current.SaleConfirm = od.SaleConfirm;
                     current.ShipConfirm = od.ShipConfirm;
                     current.CustomerConfirm = od.CustomerConfirm;
+                    current.ShipSuccessConfirm = od.ShipSuccessConfirm;
                     context.Orders.Update(current);
                     context.SaveChanges();
                 }

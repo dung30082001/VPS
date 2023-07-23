@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Repositories;
 
-namespace TestForLogin.Controllers
+namespace APIConnect.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -15,7 +15,7 @@ namespace TestForLogin.Controllers
         [Route("list")]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomer()
         {
-            return repository.GetCustomer(); 
+            return repository.GetCustomer();
         }
         [HttpGet]
         [Route("get8customer")]

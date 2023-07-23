@@ -19,7 +19,7 @@ namespace DataAccess
             {
                 using (var context = new VPSContext())
                 {
-                    listProducts = context.Accounts.ToList();
+                    listProducts = context.Accounts.Include(z=>z.StatusNavigation).Include(x=>x.Customer).Include(y=>y.Manager).Include(m=>m.Shipper).Include(n=>n.Sale).ToList();
                 }
             }
             catch (Exception e)

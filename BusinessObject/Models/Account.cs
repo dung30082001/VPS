@@ -10,7 +10,7 @@ namespace BusinessObject.Models
         public string Password { get; set; } = null!;
         public string Email { get; set; } = null!;
         public string? Avatar { get; set; }
-        public bool? Status { get; set; }
+        public int? Status { get; set; }
         public string? Profile { get; set; }
         public int? RoleId { get; set; }
         public int? BloggerId { get; set; }
@@ -32,6 +32,7 @@ namespace BusinessObject.Models
         public virtual Role? Role { get; set; }
         public virtual Sale? Sale { get; set; }
         public virtual Shipper? Shipper { get; set; }
+        public virtual Hstatus? StatusNavigation { get; set; }
         public virtual Supplier? Supplier { get; set; }
         public virtual Technical? Technical { get; set; }
     }

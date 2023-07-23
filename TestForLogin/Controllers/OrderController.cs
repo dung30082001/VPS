@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Repositories;
 
-namespace TestForLogin.Controllers
+namespace APIConnect.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -44,9 +44,9 @@ namespace TestForLogin.Controllers
         }
         [HttpGet]
         [Route("listbydate")]
-        public async Task<ActionResult<IEnumerable<Order>>> GetOrderByDate(string from,string to)
+        public async Task<ActionResult<IEnumerable<Order>>> GetOrderByDate(string from, string to)
         {
-            return repository.GetOrderByDate(from,to);
+            return repository.GetOrderByDate(from, to);
         }
         [HttpGet]
         [Route("doanhthuthang1")]
@@ -64,7 +64,7 @@ namespace TestForLogin.Controllers
         {
             VPSContext context = new VPSContext();
             var totalRevenue = context.Orders
-        .Where(o => o.OrderDate >= Convert.ToDateTime("2023-02-01") && o.OrderDate <= Convert.ToDateTime("2023-02-30"))
+        .Where(o => o.OrderDate >= Convert.ToDateTime("2023-02-01") && o.OrderDate <= Convert.ToDateTime("2023-02-28"))
         .Sum(o => o.Price);
             return Ok(totalRevenue);
         }

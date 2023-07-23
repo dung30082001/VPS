@@ -5,7 +5,7 @@ using Repositories;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 
-namespace TestForLogin.Controllers
+namespace APIConnect.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -23,7 +23,7 @@ namespace TestForLogin.Controllers
         public async Task<ActionResult<IEnumerable<OrderDetail>>> GetOrderDetailByOrderId(int id)
         {
 
-           return repository.GetOrderDetailByOrderId(id);
+            return repository.GetOrderDetailByOrderId(id);
         }
         [HttpGet]
         [Route("totalprice")]
